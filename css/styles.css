@@ -1,6 +1,7 @@
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,24 +12,21 @@ body {
     font-family: 'lato', sans-serif, 'nunito';
     font-size: 1.1rem;
     min-height: 100vh;
-    padding: 12px;
+    /* padding: 12px; */
     color: #ddd;
     margin: 0;
 }
 
 .grid-container > * {
-    box-shadow: 8px 5px 30px -10px #444;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    font-weight: 450;
+    /* padding: 10px; */
+    /* text-align: center; */
+    font-weight: 500;
 }
 
 .grid-container {
     display: grid;
-    gap: 10px;
     grid-template: 
-    "header" 90px
+    "header" 110px
     "main" auto
     "footer" 120px;
     
@@ -38,12 +36,12 @@ body {
 
     .main {
         grid-area: main;
-        background-color: #eee;
+        background-color: #ddd;
     }
 
     .footer {
         grid-area: footer;
-        background-color: #594;
+        background-color: red;
     }
 
 
@@ -65,9 +63,10 @@ a {
 
 .nav-link {
     list-style: none;
-    margin: 20px 0;
-    border-bottom: 2px solid;
-    width: 8rem;
+    margin: 1.5rem 0;
+    border-bottom: 2px solid #400;
+    width: 7.9rem;
+    padding: 0;
 }
 
 /* ----------- NAV-BAR ----------  */
@@ -77,13 +76,13 @@ a {
     background-color: #ddd;
     position: fixed;
     width: 100%;
-    border: red solid 1px;
+    z-index: 10;
+    padding: 10px;
 }
 
 .flex-nav {
     display: flex;
     flex-direction: column;
-    border:green solid 1px;
 }
 
 .nav-header span {
@@ -94,12 +93,11 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: blue solid 1px;
 }
 
 .nav-header img {
     max-width: 210px;
-    padding: 10px;
+    padding-top: 8px;
 }
 
 .nav-toggle {
@@ -107,20 +105,27 @@ a {
     background: transparent;
     color: #222;
     font-size: 1.5rem;
-    border: brown solid 1px;
+    padding-right: 20px;
 }
 
 .nav-links {
     height: 0;
     overflow: hidden;
-    transition: 0.3s ease;
+    transition: 0.45s ease-out;
     z-index: 10;
-    color:;
-    border: black solid 1px;
+    color:#222;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .nav-open {
     height: 100vh;
+}
+
+.nav-links ul li a {
+    color: #200;
 }
 
 
@@ -145,6 +150,7 @@ a {
     }
     .nav-links {
         height: auto;
+        padding: 15px 0px;
     }
 
     ul {
@@ -152,27 +158,30 @@ a {
     }
     
     .nav-link { 
-        display: inline-block;
+        display:inline;
         border-bottom: none;
         font-weight: 510;
         color:#222;
+        padding: 7px;
         }
 
     .nav-link a:hover {
-        color: #594;
-        transition: color 0.2s;
+        color: #365;
+        transition: color 0.4s ease;
     }
 
     .nav-links span {
-        background-color: #594;
-        padding: 8px 15px;
+        background-color: #483;
+        padding: 10px 18px;
         border-radius: 4px;
         color: #ddd;
+        transition: 0.4 ease;
+        margin-right: 0;
     }
 
     .nav-links span:hover {
-        background-color: #483;
-        transition: background-color 0.3s ease;
+        background-color: #263;
+        transition: 0.4s ease;
     }
 }
 
@@ -180,16 +189,19 @@ a {
 /* ----------- HERO SECTION ----------  */
 
 .hero {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    max-height: 450px;
+    background-image: url('../images/hero-terratextil.jpg');
+    /* position: relative; */
+    max-height: 550px;
+    /* overflow: hidden; */
+    background-size: cover;
+    background-position: top;
+
 }
 
 .hero img {
-    /* margin: 0 auto; */
     width: 100%;
-
+    max-height: 550px;
+    object-fit: cover;   
 }
 
 .text-overlay {
@@ -215,12 +227,14 @@ a {
 }
 
 .text-overlay h1 {
-    font-size: 28px;
+    font-size: 35px;
     padding: 0px 40px;
 }
 
 .text-overlay p {
-    font-size: 16px;
+    font-size: 18px;
+    margin-top: 1.7rem;
+    margin-bottom: 1.7rem;
 }
 
 .text-overlay a {
@@ -232,3 +246,6 @@ a {
     text-decoration: none;
 }
 
+@media only screen and (min-width: 720px) {
+
+}
