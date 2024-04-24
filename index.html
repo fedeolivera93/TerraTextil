@@ -11,8 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Agrega esto en el head de tu HTML -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+
 </head>
+
 <body class="grid-container">
     <header class="header">
         <div class="container flex-nav">
@@ -32,24 +36,77 @@
             </nav>
         </div>
     </header>
+
     <main class="main">
         <section class="hero">
             <div class="hero-content">
-                <img src="images/hero-terratextil.jpg" alt="portada terratextil">
+                <!-- <img src="images/hero-terratextil.jpg" alt="portada terratextil"> -->
                 <div class="text-overlay">
-                    <h1>Bienvenido a TerraTextil</h1>
-                    <p>En Terratextil nos comprometemos a ofrecerte moda sostenible y autosustentable. <br>¡Contribuye junto a nosotros a un mundo más verde!</p>
-                    <a href="produccion.html" class="button-produccion">Conocé más</div>a>
-                    <a href="tienda.html" class="button-tienda">Ir a la tienda</a>
+                    <h1 class="animate__animated animate__fadeInLeft">Moda Sostenible y Eco-Friendly en TERRATEXTIL</h1>
+                    <p class="animate__animated animate__fadeInRight">En Terratextil nos comprometemos a ofrecerte moda sostenible y autosustentable. <br>¡Contribuye junto a nosotros a un mundo más verde!</p>
+                    <div class="animate__animated animate__fadeInUp">
+                        <a href="produccion.html" class="button button-produccion">Conocé más</a>
+                        <a href="tienda.html" class="button button-tienda">Ir a la tienda</a>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <section class="section-2">
+            <div class="production-section">
+                <div class="column-l">
+                    <img src="images/produccion" alt="cadena de producción">
+                </div>
+                <div class="column-r">
+                    <h2>Ropa Sostenible y Amigable con el Medio Ambiente </h2>
+                    <p>Descubre nuestra colección de moda sustentable en TERRATEXTIL, donde combinamos estilo y conciencia ecológica para un mundo más verde. Cada prenda está diseñada con un enfoque en la sostenibilidad ambiental, utilizando materiales reciclados y orgánicos.</p>
+                    <p>Nuestros procesos de producción están pensados para reducir el consumo de agua y energía, creando así ropa autosustentable que no compromete el medio ambiente. En TERRATEXTIL, no solo vendemos moda; promovemos un estilo de vida que demuestra cómo cuidar el planeta puede ser elegante y sofisticado.</p>
+                    <a href="produccion.html">Conocé nuestra cadena de producción>></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-3">
+        <div class="blog-section">
+            <div class="column-l">
+                <img src="images/produccion" alt="cadena de producción">
+            </div>
+            <div class="column-r">
+                <h2>Explora Nuestro Blog: Tendencias, Consejos y Novedades en Moda Sostenible </h2>
+                <p>Sumérgete en nuestro blog, donde exploramos la fusión entre moda y responsabilidad ambiental. Descubre artículos que van más allá de las tendencias, con consejos sobre cómo adoptar un estilo de vida sostenible y las últimas novedades en moda eco-friendly.</p>
+                <p>Nuestro compromiso con la moda sustentable se refleja en cada entrada de blog. Desde guías sobre materiales reciclados y orgánicos hasta consejos para reducir el impacto ambiental en tu guardarropa, nuestro objetivo es inspirarte a través de la información y la conciencia.</p>
+                <a href="produccion.html">Ir al blog>></a>
+            </div>
+        </div>
+        </section>
+
         <section class="tienda">
             <h2>¡Visita Nuestra Tienda!</h2>
             <p>Explora nuestra amplia selección de ropa autosustentable en nuestra tienda en línea. Encuentra prendas que combinan estilo, comodidad y compromiso con el medio ambiente. ¡Haz tu compra hoy y únete al movimiento por la moda sostenible!</p>
             <a href="tienda.html" class="button-tienda">Ir a la Tienda</a>
         </section>
+
+        <section class="three-columns">
+            <h3>¿Por qué elegirnos?</h3>
+            <div class="why-section">
+                <div class="why-columns">
+                    <div class="animate__animated column-1 animate__fadeInLeftBig">
+                        <h4>Columna 1</h4>
+                        <p>Contenido de la columna 1.</p>
+                    </div>
+                    <div class="animate__animated column-2 animate__fadeInUpBig">
+                        <h4>Columna 2</h4>
+                        <p>Contenido de la columna 2.</p>
+                    </div>
+                    <div class="animate__animated column-3 animate__fadeInRightBig">
+                        <h4>Columna 3</h4>
+                        <p>Contenido de la columna 3.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
     <footer class="footer">
         <div>
             <h2>Footer Section</h2>

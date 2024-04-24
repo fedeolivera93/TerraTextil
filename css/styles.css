@@ -26,7 +26,7 @@ body {
 .grid-container {
     display: grid;
     grid-template: 
-    "header" 110px
+    "header" 120px
     "main" auto
     "footer" 120px;
     
@@ -74,10 +74,11 @@ a {
 
 .header {
     background-color: #ddd;
-    position: fixed;
+    position: absolute;
+    top: 0;
     width: 100%;
     z-index: 10;
-    padding: 10px;
+    padding: 10px 10px 20px 10px;
 }
 
 .flex-nav {
@@ -135,7 +136,8 @@ a {
     }
 
     .header {
-        position: absolute;
+        position: sticky;
+        top: 0;
     }
 
     .nav-header {
@@ -171,11 +173,14 @@ a {
     }
 
     .nav-links span {
-        background-color: #483;
         padding: 10px 18px;
         border-radius: 4px;
-        color: #ddd;
-        transition: 0.4 ease;
+        text-decoration: none;
+        font-weight: bold;
+        color: #eee;
+        background-color: #400;
+        border-radius: 5px;
+        transition:  0.3s ease;
         margin-right: 0;
     }
 
@@ -190,18 +195,20 @@ a {
 
 .hero {
     background-image: url('../images/hero-terratextil.jpg');
-    /* position: relative; */
-    max-height: 550px;
-    /* overflow: hidden; */
+    position: relative;
+    background-repeat: no-repeat;
+    height: 600px;
+    overflow: hidden;
     background-size: cover;
-    background-position: top;
+    background-position: center top;
+    background-attachment: none;
 
 }
 
 .hero img {
     width: 100%;
-    max-height: 550px;
-    object-fit: cover;   
+    /* max-height: 600px; */
+    /* object-fit: fill;    */
 }
 
 .text-overlay {
@@ -209,8 +216,9 @@ a {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); 
+    /* max-height: 600px; */
+    min-height: 600px;
+    background-color: rgba(0, 0, 0, 0.8); 
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -221,14 +229,15 @@ a {
     text-align: center;
 }
 
-.text-overlay h1,
-.text-overlay p {
-    margin: 0;
+
+.text-overlay h1 {
+    padding: 0px 40px;
 }
 
 .text-overlay h1 {
-    font-size: 35px;
+    font-size: 26px;
     padding: 0px 40px;
+    position: relative;
 }
 
 .text-overlay p {
@@ -237,15 +246,156 @@ a {
     margin-bottom: 1.7rem;
 }
 
-.text-overlay a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #594;
-    color: #ddd;
-    text-decoration: none;
+.animate__animated a {
+    margin: 10px;
 }
 
 @media only screen and (min-width: 720px) {
+    .hero {
+        max-height: 600px;
+    }
+
+    .text-overlay {
+        height: 600px;
+    }
+
+    .text-overlay h1 {
+        margin: 0 auto;
+    }
+
+    .text-overlay p {
+        margin: 24px;
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #263;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #400;
+}
+
+
+
+/* ----------- COLUMN PRODUCTION AND BLOG SECTION ----------  */
+
+.production-section {
+    margin-top: 10vh;
+    display: flex;
+    color: #200;
+    flex-direction: column;
+}
+
+.column-l {
+    padding: 12px;
+    /* min-width: 400px; */
 
 }
+
+.column-r {
+    padding: 3rem;
+    justify-content: center;
+    /* text-align: center; */
+
+}
+
+.column-r p {
+    margin-top: 16px;
+    margin-bottom: 10px;
+}
+
+.column-r a {
+    color: #243;
+}
+
+.column-r a:hover {
+    color: #594;
+}
+
+.blog-section {
+    margin-top: 10vh;
+    display: flex;
+    color: #200;
+    flex-direction: column-reverse;
+}
+
+@media only screen and (min-width: 720px) {
+    .production-section {
+        margin-top: 10vh;
+        flex-direction: row;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .blog-section {
+        margin-top: 10vh;
+        display: flex;
+        color: #200;
+        flex-direction: row-reverse;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+
+
+/* ----------- THREE COLUMN SECTION ----------  */
+
+.three-columns {
+
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    border: 2px solid darkblue;
+    background-color: #8ca;
+    text-align: center;
+}
+
+.three-columns h3 {
+    font: bold;
+    font-size: 28px;
+    padding: 5vh;
+
+}
+
+.why-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.why-columns {
+    display: flex;
+    flex-direction: row;
+    border: solid purple;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.why-columns > div {
+    flex: 1 0 33%; /* Que cada columna ocupe el 33% del espacio */
+    padding: 20px; /* Añade padding a cada columna */
+    border: 2px yellow solid;
+}
+
+  /* Media query para dispositivos móviles */
+@media only screen and (max-width: 720px) {
+    .why-section {
+      flex-direction: column; /* Cambia a columnas en dispositivos móviles */
+    }
+
+    .why-columns > div {
+      flex: 1 0 100%; /* Que cada columna ocupe el 100% del espacio en móvil */
+      padding: 10px; /* Ajusta el padding para móvil si es necesario */
+    }
+}
+
