@@ -350,7 +350,7 @@ a {
 
 .three-columns {
 
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 100%;
     margin: 0 auto;
     border: 2px solid darkblue;
@@ -362,6 +362,7 @@ a {
     font: bold;
     font-size: 28px;
     padding: 5vh;
+    border: 2px solid red;
 
 }
 
@@ -369,22 +370,27 @@ a {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    max-width: 1200px;
+    min-width: 100%;
+    align-content: center;
+    justify-content: center;
 }
 
 .why-columns {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     border: solid purple;
-    justify-content: center;
     align-items: center;
-    
+    justify-content: center;
+    width: 1200px;
+
 }
 
 .why-columns > div {
-    flex: 1 0 33%; /* Que cada columna ocupe el 33% del espacio */
-    padding: 20px; /* Añade padding a cada columna */
+    flex: 1; 
+    /* padding: 20px; Añade padding a cada columna */
     border: 2px yellow solid;
+    justify-content: center;
+    margin: 10px;
 }
 
   /* Media query para dispositivos móviles */
