@@ -1,0 +1,38 @@
+
+.carrusel {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.images {
+    width: 100%;
+    height: auto;
+    display: flex;
+    transition: margin-left 1s, opacity 1s; /* Combina las transiciones en una sola línea */
+}
+.images {
+    display: flex;
+    animation: desplazar 30s linear infinite alternate; /* Desplazamiento continuo */
+}
+.images img {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes desplazar {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Desplaza las imágenes hacia la izquierda */
+   }
+}
+
+
+
+
+
+
+
+
