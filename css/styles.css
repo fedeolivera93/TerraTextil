@@ -301,8 +301,7 @@ a {
 
 .column-r {
     padding: 3rem;
-    justify-content: center;
-    /* text-align: center; */
+    text-align: left;
 
 }
 
@@ -324,6 +323,12 @@ a {
     display: flex;
     color: #200;
     flex-direction: column-reverse;
+}
+
+.section-2 i, .section-3 i {
+    text-align: center;
+    margin-left: px;
+    vertical-align: bottom;
 }
 
 @media only screen and (min-width: 720px) {
@@ -435,5 +440,80 @@ a {
 
     .why-columns .column {
         flex-basis: 100%;
+    }
+}
+
+
+/* ----------- FAQ SECTION ----------  */
+
+.faq-section {
+    color: #200;
+    padding: 20px;
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.faq-section h2 {
+    text-align: center;
+}
+
+.faqs-container {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faqs {
+    cursor: pointer;
+    border: 1px solid #400;
+    padding: 15px;
+}
+
+.faqs.active i {
+    rotate: 180deg;
+    padding-top: 20px;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+}
+
+.answer {
+    display: none;
+    transition: height 0.3 ease-in-out;
+    max-height: 0;
+}
+
+.answer.active {
+    display: block;
+    max-height: 1000px;
+}
+
+
+@media screen and (min-width: 720px) {
+
+    .faq-section {
+        max-width: none;
+    }
+
+    .faqs-container {
+        display: flex;
+        flex-direction: row wrap;
+        border: 1px solid red;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1020px) {
+    .faq-section {
+        max-width: none;
+        /* width: 100px; */
+    }
+
+    .faqs-container {
+        max-width: 1000px;
+
     }
 }
