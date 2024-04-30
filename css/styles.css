@@ -358,24 +358,26 @@ a {
     /* justify-content: space-between; */
     width: 100%;
     margin: 0 auto;
-    border: 2px solid darkblue;
     background-image: linear-gradient(to bottom, #243, #345);
     text-align: center;
+    padding: 40px 0 30px 0;
 }
 
 .three-columns h3 {
     font: bold;
-    font-size: 28px;
+    font-size: 2rem;
     padding: 5vh;
-    border: 2px solid red;
+}
 
+.three-columns i {
+    font-size: 28px;
+    padding: 12px;
 }
 
 .why-section {
 
     /* margin: 5px 0; */
     justify-content: center;
-    border: 1px greenyellow solid;
     padding: 5px;
     max-width: 1020px;
     margin: 20px auto;
@@ -388,7 +390,6 @@ a {
     /* flex-direction: row; */
     display: flex;
     flex-flow: row wrap;
-    border: solid purple;
     align-items: center;
     justify-content: center;
     max-width: 1200px;
@@ -398,7 +399,6 @@ a {
 .why-columns > div {
     flex: 1; 
     padding: 6px;
-    border: 2px #400 solid;
     justify-content: center;
     margin: 4px;
     border-radius: 8px;  
@@ -434,6 +434,11 @@ a {
     .why-columns .column:last-child {
         flex-basis: 100%;
     }   
+
+    .why-columns .column:nth-child(-n+2) {
+        height: 340px;
+    }
+    
 }
 
 @media screen and (max-width: 720px) {
@@ -441,6 +446,18 @@ a {
     .why-columns .column {
         flex-basis: 100%;
     }
+
+    .why-columns .column:nth-child(-n+2) {
+        height: 280px;
+    }
+}
+
+
+.angled-separator {
+    height: 80px;
+    width: 100vw;
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0) 49%, #345 50%);
+    /* Ajusta los colores y la inclinación según tus preferencias */
 }
 
 
@@ -451,10 +468,13 @@ a {
     padding: 20px;
     max-width: 90vw;
     margin: 0 auto;
+    padding-bottom: 8vh;
 }
 
 .faq-section h2 {
     text-align: center;
+    font-size: 2rem;
+    padding-bottom: 25px;
 }
 
 .faqs-container {
@@ -501,7 +521,6 @@ a {
     .faqs-container {
         display: flex;
         flex-direction: row wrap;
-        border: 1px solid red;
         margin: 0 auto;
     }
 }
@@ -516,4 +535,11 @@ a {
         max-width: 1000px;
 
     }
+}
+
+.angled-separator-inverted {
+    height: 100px;
+    width: 100vw;
+    background-image: linear-gradient(to top left, #345 49%,rgba(0, 0, 0, 0) 50%);
+    /* Ajusta los colores y la inclinación según tus preferencias */
 }
