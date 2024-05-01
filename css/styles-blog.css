@@ -1,0 +1,43 @@
+.grid-blog {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 120px auto 120px;
+    height: 100vh;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+
+header {
+    grid-column-start: span 3; 
+    }
+
+main {
+    background-color: gold;
+    grid-column-start: span 2;
+}
+
+aside {
+    background-color: orange;
+    grid-column-end: span 1;
+}
+
+footer {
+    background-color: red;
+    grid-column-start: span 3;
+}
+
+@media (max-width:720px) {
+    .grid-blog {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 120px auto auto 120px;
+    }
+
+    header, aside, main, footer {
+        grid-column-start: span 1;
+    }
+}
+
+
+
