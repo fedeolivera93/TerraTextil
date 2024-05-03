@@ -364,6 +364,7 @@ a {
     background-image: linear-gradient(to bottom, #243, #345);
     text-align: center;
     padding: 40px 0 30px 0;
+    color: #ddd;
 }
 
 .three-columns h3 {

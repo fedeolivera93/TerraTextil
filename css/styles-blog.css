@@ -1,43 +1,90 @@
 .grid-blog {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: 120px auto 120px;
-    height: 100vh;
-    margin: 0 auto;
-    gap: 10px;
+    /* gap: 10px; */
+    /* min-height: 100vh; */
+    grid-template:
+    /* "header" 120px */
+    "main" 
+    "sidebar"
+    "footer" 120px;
+    
+    .header {
+        grid-area: header;
+    }
+
+    .main-blog {
+        grid-area: main;
+    }
+
+    .aside-blog {    
+        grid-area: sidebar;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+
+
 }
 
 
-header {
-    grid-column-start: span 3; 
-    }
-
 main {
     background-color: gold;
-    grid-column-start: span 2;
 }
 
 aside {
     background-color: orange;
-    grid-column-end: span 1;
+    list-style-type: none;
 }
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #200;
+}
+
+h1 {
+    padding-top: 22px;
+}
+
+h1, h2, h3 {
+    margin: 15px;
+    font-weight: 700;
+}
+
+p {
+    margin: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.img-blog {
+    max-width: 100%;
+    height: auto;
+    margin-top: 18px;
+}
+
+
 
 footer {
     background-color: red;
-    grid-column-start: span 3;
+
 }
 
-@media (max-width:720px) {
+@media (min-width:760px) {
     .grid-blog {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 120px auto auto 120px;
-    }
-
-    header, aside, main, footer {
-        grid-column-start: span 1;
+        grid-template:
+        "header header header" 120px
+        "main main sidebar" auto
+        "footer footer footer" 120px/
+        200px auto;
     }
 }
+
 
 
 
