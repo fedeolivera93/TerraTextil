@@ -496,9 +496,15 @@ a {
     padding: 15px;
 }
 
+.faqs i {
+    display: flex;
+    align-items: center;
+}
+
 .faqs.active i {
     rotate: 180deg;
     padding-top: 20px;
+
 }
 
 .question {
@@ -548,4 +554,113 @@ a {
     width: 100vw;
     background-image: linear-gradient(to top left, #345 49%,rgba(0, 0, 0, 0) 50%);
     /* Ajusta los colores y la inclinación según tus preferencias */
+}
+
+/* ---------------- CONTACT FORM SECTION ------------------- */
+
+
+.containerForm {
+    background-color: #345;
+    /* padding: 20px; */
+    color: #ddd;
+    padding-top: 7vh;
+}
+
+.containerForm h3 {
+    font-size: 1.3em;
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+#contactForm {
+    max-width: 600px;
+    margin: 0 auto; 
+    text-align: center; 
+}
+
+.form-group {
+    margin-bottom: 20px; 
+    margin: 1em 0;
+} 
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"], 
+.form-group select,
+.form-group textarea {
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Incluir el relleno y el borde en el ancho total */
+    margin-bottom: 3.5vh;
+} */
+
+
+
+
+input[type="submit"]:hover {
+    background-color: #B5D57B;
+}
+
+.radio-group input {
+    margin-right: 5px;
+}
+
+
+
+.form-group select {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.form-group select:focus {
+    border-color: #0066ff;
+    box-shadow: 0 0 5px rgba(0, 102, 255, 0.5);
+}
+
+/* Estilos para la barra de navegación */
+.container form nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container form nav ul li {
+    display: inline;
+}
+
+.container form nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.containerForm .button {
+    background-color: #ddd;
+}
+
+input[type="submit"] {
+    background-color: #ddd;
+    color: #200;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #5b5;
 }
