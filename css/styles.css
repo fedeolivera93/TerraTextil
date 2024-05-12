@@ -3,6 +3,7 @@
 
 @import url(styles-blog.css);
 
+@import url(styles-tienda.css);
 
 
 * {
@@ -361,7 +362,7 @@ a {
     /* justify-content: space-between; */
     width: 100%;
     margin: 0 auto;
-    background-image: linear-gradient(to bottom, #243, #345);
+    background-color: #345;
     text-align: center;
     padding: 40px 0 30px 0;
     color: #ddd;
@@ -380,7 +381,6 @@ a {
 
 .why-section {
 
-    /* margin: 5px 0; */
     justify-content: center;
     padding: 5px;
     max-width: 1020px;
@@ -410,7 +410,7 @@ a {
     border-radius: 8px;  
     height: 400px;
     align-content: center;
-    background-image: linear-gradient(to bottom, #594, #6a6);
+    background-color: #263;
     transition: 0.3s;
 
 }
@@ -563,7 +563,8 @@ a {
     background-color: #345;
     /* padding: 20px; */
     color: #ddd;
-    padding-top: 100px;
+    padding-top: 85px;
+    margin: 0 auto;
 }
 
 .containerForm h3 {
@@ -603,7 +604,7 @@ a {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box; /* Incluir el relleno y el borde en el ancho total */
-    margin-bottom: 3.5vh;
+    margin-bottom: 3vh;
 } */
 
 
@@ -612,11 +613,6 @@ a {
 input[type="submit"]:hover {
     background-color: #B5D57B;
 }
-
-.radio-group input {
-    margin-right: 5px;
-}
-
 
 
 .form-group select {
@@ -650,6 +646,7 @@ input[type="submit"]:hover {
 
 .containerForm .button {
     background-color: #ddd;
+
 }
 
 input[type="submit"] {
@@ -659,6 +656,7 @@ input[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 30px;
 }
 
 input[type="submit"]:hover {
