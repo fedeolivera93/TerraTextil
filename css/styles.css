@@ -665,20 +665,20 @@ input[type="submit"]:hover {
 
 
 input[type="submit"] {
-    /* background-color: #622; */
     color: #ddd;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 30px;
-    background-color: #622;
+    background-color: #263;
+    width: 100%;
 }
 
 input[type="submit"]:hover {
 
-    background-color: #ddd;
-    color: #200;
+    background-color: #400;
+    color: #ddd;
 }
 
 

@@ -33,12 +33,18 @@ faqs.forEach((faq, index) => {
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
   
-    // Validación del nombre
-    var name = document.getElementById('name').value;
-    if(name == ""){
-      alert('Por favor, ingresa tu nombre y apellido.');
+// Validación del nombre y apellido
+  var name = document.getElementById('name').value;
+  if(name.trim() === ""){
+    alert('Por favor, ingresa tu nombre y apellido.');
+    return false;
+  } else {
+    var parts = name.split(' ');
+    if(parts.length < 2 || parts[1] === ""){
+      alert('Por favor, asegúrate de ingresar tanto tu nombre como tu apellido.');
       return false;
     }
+  }
   
     // Validación del correo electrónico
     var email = document.getElementById('email').value;
