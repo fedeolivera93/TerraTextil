@@ -45,7 +45,6 @@ body {
 
     .footer {
         grid-area: footer;
-        background-color: red;
     }
 
 
@@ -206,6 +205,7 @@ a {
     background-size: cover;
     background-position: center top;
     background-attachment: none;
+    /* overflow: auto; */
 
 }
 
@@ -290,11 +290,25 @@ a {
 
 /* ----------- COLUMN PRODUCTION AND BLOG SECTION ----------  */
 
-.production-section {
-    margin-top: 10vh;
+.production-section,
+.blog-section {
+    margin-top: 3vh;
     display: flex;
     color: #200;
     flex-direction: column;
+    align-items: center;
+    max-width: 92vw;
+}
+
+
+
+.production-section img,
+.section-3 img {
+    max-width: 350px;
+    border-radius: 25px;
+    border: 2px solid #263;
+    align-items: center;
+    justify-content: center;
 }
 
 .column-l {
@@ -323,28 +337,31 @@ a {
 }
 
 .blog-section {
-    margin-top: 10vh;
+    margin-top: 1vh;
     display: flex;
     color: #200;
-    flex-direction: column-reverse;
+    /* flex-direction: column-reverse; */
 }
 
 .section-2 i, .section-3 i {
     text-align: center;
-    margin-left: px;
     vertical-align: bottom;
 }
 
 @media only screen and (min-width: 720px) {
     .production-section {
-        margin-top: 10vh;
+        margin-top: 8vh;
         flex-direction: row;
         max-width: 1200px;
         margin: 0 auto;
     }
 
+    .production-section img {
+        margin-left: 3vw;
+    }
+
     .blog-section {
-        margin-top: 10vh;
+        margin-top: 8vh;
         display: flex;
         color: #200;
         flex-direction: row-reverse;
@@ -366,6 +383,7 @@ a {
     text-align: center;
     padding: 40px 0 30px 0;
     color: #ddd;
+    overflow: auto;
 }
 
 .three-columns h3 {
@@ -390,8 +408,6 @@ a {
 }
 
 .why-columns {
-    display: flex;
-    /* flex-direction: row; */
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
@@ -472,9 +488,10 @@ a {
 .faq-section {
     color: #200;
     padding: 20px;
-    max-width: 90vw;
+    max-width: 80vw;
     margin: 0 auto;
     padding-bottom: 8vh;
+    overflow: auto;
 }
 
 .faq-section h2 {
@@ -565,6 +582,7 @@ a {
     color: #ddd;
     padding-top: 85px;
     margin: 0 auto;
+    overflow: auto;
 }
 
 .containerForm h3 {
@@ -644,21 +662,49 @@ input[type="submit"]:hover {
     text-decoration: none;
 }
 
-.containerForm .button {
-    background-color: #ddd;
 
-}
 
 input[type="submit"] {
-    background-color: #ddd;
-    color: #200;
+    /* background-color: #622; */
+    color: #ddd;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 30px;
+    background-color: #622;
 }
 
 input[type="submit"]:hover {
-    background-color: #5b5;
+
+    background-color: #ddd;
+    color: #200;
+}
+
+
+/* ---------------- FOOTER SECTION ---------------------- */
+
+.footer {
+    width: 100%;
+    color: #200;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.container.flex-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.footer-links a {
+    color: #200;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }

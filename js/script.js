@@ -50,14 +50,14 @@ document.getElementById('contactForm').addEventListener('submit', function(event
       return false;
     }
     // Validación del número de teléfono
-  var numero = document.getElementById('numero').value;
-  if(numero == ""){
-    alert('Por favor, ingresa tu número de teléfono.');
-    return false;
-  } else if(!/^\d+$/.test(numero)){
-    alert('El número de teléfono solo debe contener dígitos.');
-    return false;
-  }
+    var numero = document.getElementById('telefono').value; // Cambiado de 'numero' a 'telefono'
+    if(numero == ""){
+      alert('Por favor, ingresa tu número de teléfono.');
+      return false;
+    } else if(!/^\d+$/.test(numero)){
+      alert('El número de teléfono solo debe contener dígitos.');
+      return false;
+    }
     // Validación del asunto
     var subject = document.getElementById('subject').value;
     if(subject == ""){
