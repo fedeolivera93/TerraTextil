@@ -283,7 +283,7 @@ a {
 }
 
 .button:hover {
-    background-color: #400;
+    background-color: #384;
 }
 
 
@@ -297,7 +297,7 @@ a {
     color: #200;
     flex-direction: column;
     align-items: center;
-    max-width: 92vw;
+    max-width: 90vw;
 }
 
 
@@ -367,6 +367,7 @@ a {
         flex-direction: row-reverse;
         max-width: 1200px;
         margin: 0 auto;
+        margin-bottom: 40px;
     }
 }
 
@@ -389,7 +390,9 @@ a {
 .three-columns h3 {
     font: bold;
     font-size: 2rem;
-    padding: 5vh;
+    letter-spacing: 0.01em; /* Ajusta el espaciado entre letras */
+    margin: 25px 0;
+
 }
 
 .three-columns i {
@@ -413,31 +416,40 @@ a {
     align-items: stretch;
     justify-content: center;
     max-width: 1200px;
+    gap: 16px;
+    padding: 20px;
 
 }
 
-.why-columns > div {
+.why-columns > .column {
     flex: 1; 
     display: flex;
     flex-direction: column;
     padding: 6px;
     justify-content: center;
-    margin: 4px;
+    margin: 6px;
     border-radius: 8px;  
-    height: 400px;
+    height: 420px;
     align-content: center;
+    align-items: center;
     background-color: #263;
-    transition: 0.3s;
+    transition: transform 0.8s;
 
 }
 
-.why-columns > div:hover {
-    background-image: linear-gradient(to bottom, #622, #844)
+.why-columns > .column:hover {
+    transform: translateY(-12px);
+    background-image: linear-gradient(to bottom, #622, #733)
 }
 
 .why-columns h4 {
     font-size: 22px;
-    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.why-columns > .column i {
+    font-size: 2.2em;
+    /* margin-bottom: 16px; */
 }
 
 .why-columns p {
@@ -475,11 +487,23 @@ a {
 }
 
 
-.angled-separator {
+.separator-bottom {
     height: 80px;
     width: 100vw;
-    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0) 49%, #345 50%);
-    /* Ajusta los colores y la inclinación según tus preferencias */
+    background: linear-gradient(to top left, rgba(0, 0, 0, 0) 49%, #345 50%);
+    position: relative;
+    overflow: hidden;
+}
+
+.separator-bottom::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #345;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
 }
 
 
@@ -566,11 +590,23 @@ a {
     }
 }
 
-.angled-separator-inverted {
+.separator-top {
     height: 100px;
     width: 100vw;
-    background-image: linear-gradient(to top left, #345 49%,rgba(0, 0, 0, 0) 50%);
-    /* Ajusta los colores y la inclinación según tus preferencias */
+    background: linear-gradient(to top left, #345 49%, rgba(0, 0, 0, 0) 50%);
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.separator-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background: #345;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
 }
 
 /* ---------------- CONTACT FORM SECTION ------------------- */
