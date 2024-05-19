@@ -783,3 +783,21 @@ input[type="submit"]:hover {
 .footer-links a:hover {
     text-decoration: underline;
 }
+
+
+/* ----------------------- SCROLL TO TOP -------------------------------- */
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50px;
+    background-color: #400;
+    color: #ddd;
+    font-size: 18px;
+    z-index: 50;
+    /* Agrega estilos adicionales aquí */
+  }
+  

@@ -80,3 +80,22 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   
     alert('Formulario enviado con éxito!');
   });
+
+  // ---------------------- Scrooll to Top----------------------------
+
+// Esperar a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+  // Obtener el botón
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+  // Función para desplazar hacia arriba
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  // Evento de clic para el botón
+  scrollToTopBtn.addEventListener('click', scrollToTop);
+});
