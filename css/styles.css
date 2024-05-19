@@ -12,6 +12,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'lato', sans-serif, 'nunito';
     font-size: 1.1rem;
@@ -540,12 +544,12 @@ a {
 .faqs i {
     display: flex;
     align-items: center;
+    transition: transform 0.5s ease;
 }
 
 .faqs.active i {
-    rotate: 180deg;
+    transform: rotate(180deg);
     padding-top: 20px;
-
 }
 
 .question {
@@ -555,13 +559,18 @@ a {
 
 .answer {
     display: none;
-    transition: height 0.3 ease-in-out;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform-origin: top;
     max-height: 0;
+
 }
+
 
 .answer.active {
     display: block;
     max-height: 1000px;
+
 }
 
 
@@ -608,6 +617,10 @@ a {
     background: #345;
     clip-path: polygon(0 0, 0% 100%, 100% 50%);
 }
+
+
+
+/* ----------- END OF FAQ SECTION ----------  */
 
 /* ---------------- CONTACT FORM SECTION ------------------- */
 
@@ -719,7 +732,7 @@ input[type="submit"]:hover {
     color: #ddd;
 }
 
-
+/* ---------------- END OF CONTACT FORM SECTION ------------------- */
 
 /* ---------------- MAPS SECTION ---------------------- */
 
