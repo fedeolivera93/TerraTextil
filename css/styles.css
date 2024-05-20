@@ -86,6 +86,7 @@ a {
     width: 100%;
     z-index: 10;
     padding: 10px 10px 20px 10px;
+    z-index: 150;
 }
 
 .flex-nav {
@@ -196,7 +197,7 @@ a {
         transition: 0.4s ease;
     }
 }
-
+/* ----------- END OF NAV-BAR ----------  */
 
 /* ----------- HERO SECTION ----------  */
 
