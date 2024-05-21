@@ -437,12 +437,12 @@ a {
     align-content: center;
     align-items: center;
     background-color: #263;
-    transition: transform 0.8s;
+    transition: transform 1s;
 
 }
 
 .why-columns > .column:hover {
-    transform: translateY(-12px);
+    transform: translateY(-16px);
     background-image: linear-gradient(to bottom, #622, #733)
 }
 
