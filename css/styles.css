@@ -23,6 +23,7 @@ body {
     /* padding: 12px; */
     color: #200;
     margin: 0;
+    background-color: #345;
 }
 
 .grid-container > * {
@@ -775,28 +776,96 @@ input[type="submit"]:hover {
 
 .footer {
     width: 100%;
-    color: #200;
-    padding: 10px 0;
-    background-color: #ddd;
-}
-
-.container.flex-footer {
-    max-width: 1200px;
     margin: 0 auto;
+    color: #ddd;
+    background-color: #345;
+    padding-top: 30px;
+    border-top: 5px solid #200;
+
+}
+
+.footer-row {
+    max-width: 1200px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center; 
+    align-content: center;
+    margin: auto;
 }
 
-.footer-links a {
-    color: #200;
-    text-decoration: none;
-    padding: 0 10px;
+.footer-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    /* border: solid 1px blue; */
+    align-items: center;
+    padding: 15px 0;
 }
 
-.footer-links a:hover {
-    text-decoration: underline;
+.footer-div img{
+    width: 80px;
 }
+
+.footer-div p {
+    width: 70%;
+
+}
+
+.footer-div a, .footer-div i{
+    color: #ddd;
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+}
+
+#footer-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid orange; */
+}
+
+
+#media i {
+    display: flex;
+    flex-direction: row;
+    /* border: solid 1px #200; */
+    color: #ddd;
+    font-size: 28px;
+}
+
+
+#footer-menu a:hover,
+#media i:hover {
+    color: #888;
+}
+
+.footer-row.copyright {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 15px;
+}
+
+.copyright {
+    text-align: center;
+
+}
+
+@media (min-width: 650px)  {
+    .footer-row {
+        width: 100%; /* Ancho en dispositivos tipo tablet */
+        flex-direction: row;
+    }
+
+    .footer-row div {
+        width: 100%;
+    }
+}
+
 
 
 /* ----------------------- SCROLL TO TOP -------------------------------- */
