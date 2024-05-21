@@ -781,6 +781,7 @@ input[type="submit"]:hover {
     background-color: #345;
     padding-top: 30px;
     border-top: 5px solid #200;
+    height: 110px;
 
 }
 
@@ -791,6 +792,7 @@ input[type="submit"]:hover {
     justify-content: space-between;
     align-content: center;
     margin: auto;
+    background-color: #345;
 }
 
 .footer-div {
