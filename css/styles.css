@@ -857,7 +857,7 @@ input[type="submit"]:hover {
 
 }
 
-@media (min-width: 650px)  {
+@media (min-width: 550px)  {
     .footer-row {
         width: 100%; /* Ancho en dispositivos tipo tablet */
         flex-direction: row;
@@ -865,8 +865,22 @@ input[type="submit"]:hover {
 
     .footer-row div {
         width: 100%;
+        flex-direction: row ;
     }
+
+@media (max-width: 650px)  {
+    .footer-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer-row div {
+        flex: 1 0 45%;
+
+    }
+
 }
+
 
 
 
@@ -883,6 +897,4 @@ input[type="submit"]:hover {
     color: #ddd;
     font-size: 18px;
     z-index: 50;
-    /* Agrega estilos adicionales aquí */
-  }
-  
+}
