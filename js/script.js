@@ -101,4 +101,27 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  // Función para cargar los archivos HTML
+  function loadHTML(file, elementId) {
+      fetch(file)
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error(`Error al cargar ${file}: ${response.statusText}`);
+              }
+              return response.text();
+          })
+          .then(data => {
+              document.getElementById(elementId).innerHTML = data;
+          })
+          .catch(error => {
+              console.error(error);
+          });
+  }
+
+  // Cargar el header y el footer
+  loadHTML('partials/header.html', 'header-container');
+  loadHTML('partials/footer.html', 'footer-container');
+});
+
 
