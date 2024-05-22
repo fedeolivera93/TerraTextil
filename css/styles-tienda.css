@@ -1,4 +1,5 @@
-.container-store {
+#hero-tienda {
+    position: relative; /* Necesario para que el pseudo-elemento se posicione correctamente */
     background-image: url(../images/hero-store.jpeg);
     background-size: cover;
     background-position: center;
@@ -12,42 +13,4 @@
     height: 500px;
 }
 
-.overlay {
-    background-color: rgba(0, 0, 0, 0.7);
-
-}
-
-.content-store {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.buttons {
-    margin-top: 20px;
-}
-
-.button {
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.button:hover {
-}
-
-/* Estilos para el icono */
-.bx {
-    vertical-align: middle;
-}
-
-.bx-store-alt {
-    font-size: 4rem;
-}
-
-
-
-}
 

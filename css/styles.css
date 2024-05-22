@@ -19,7 +19,7 @@ html {
 body {
     font-family: 'lato', sans-serif, 'nunito';
     font-size: 1.1rem;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     /* padding: 12px; */
     color: #200;
     margin: 0;
@@ -898,4 +898,5 @@ input[type="submit"]:hover {
     color: #ddd;
     font-size: 18px;
     z-index: 50;
+}
 }
