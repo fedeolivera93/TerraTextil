@@ -117,7 +117,7 @@
 
 @media screen and (max-width: 720px) {
     .main-produccion{
-        margin: auto 4em;
+        margin: auto 3em;
     }
     .header{
         position: relative;
