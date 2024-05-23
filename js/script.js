@@ -119,9 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
           });
   }
 
-  // Cargar el header y el footer
-  loadHTML('partials/header.html', 'header-container');
-  loadHTML('partials/footer.html', 'footer-container');
+
 });
 
 
