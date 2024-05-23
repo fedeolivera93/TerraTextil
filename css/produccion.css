@@ -89,6 +89,9 @@
 .img-produ5{
     margin-top: 20px;
 }
+.footer{
+    height: auto;
+}
 
 @media screen and (max-width: 1020px) {
     .container-produ1,
@@ -111,6 +114,19 @@
         margin-top: 20px;
     }
 }
+
+@media screen and (max-width: 720px) {
+    .main-produccion{
+        margin: auto 4em;
+    }
+    .header{
+        position: relative;
+    }
+    .main-produccion p{
+        text-align: justify;
+    }
+}
+
 /* carrusel */
 
 .carrusel {
