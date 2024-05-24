@@ -577,7 +577,7 @@ a {
 @media screen and (min-width: 720px) {
 
     .faq-section {
-        max-width: none;
+        max-width: 80vw;
     }
 
     .faqs-container {
@@ -589,9 +589,8 @@ a {
 
 @media screen and (min-width: 1020px) {
     .faq-section {
-        max-width: none;
-        /* width: 100px; */
-    }
+        max-width: 75 vw
+   }
 
     .faqs-container {
         max-width: 1000px;
