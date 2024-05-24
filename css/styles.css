@@ -747,8 +747,9 @@ input[type="submit"]:hover {
 .content-map p {
     text-align: center;
     max-width: 600px; 
-    margin: 0 auto 32px;
+    margin: auto;
     padding: 10px;
+    margin-bottom: 20px;
 }
 
 .maps iframe {
