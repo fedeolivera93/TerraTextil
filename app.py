@@ -79,6 +79,7 @@ catalogo = Catalogo(host='localhost', user='root', password='',database='inventa
 # catalogo.agregar_producto('Calcetines de bambú', 25, 800, 'calcetines_bambu.jpg', 206)
 # catalogo.agregar_producto('Sombrero de algodón orgánico', 12, 1200, 'sombrero_algodon.jpg', 207)
 
+
 # Consultamos un producto y lo mostramos
 
 # cod_prod = int(input("Ingrese el código del producto: "))
@@ -88,14 +89,16 @@ catalogo = Catalogo(host='localhost', user='root', password='',database='inventa
 # else:
 #         print(f'Producto {cod_prod} no encontrado.')
 
+
 # productos = catalogo.listar_productos()
 # for producto in productos:
 #     print(producto)
 
-# Eliminamos un producto
-catalogo.eliminar_producto(6)
-productos = catalogo.listar_productos()
-for producto in productos:
-    print(producto)
+
+# # Eliminamos un producto
+# catalogo.eliminar_producto(6)
+# productos = catalogo.listar_productos()
+# for producto in productos:
+#     print(producto)
 
 
