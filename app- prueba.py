@@ -70,14 +70,14 @@ class Catalogo:
 #Programa principal
 
 catalogo = Catalogo(host='localhost', user='root', password='',database='inventario')
-# Agregamos productos a la tabla
-# catalogo.agregar_producto('Camiseta de algodón orgánico', 20, 1500, 'camiseta_algodon.jpg', 201)
-# catalogo.agregar_producto('Pantalones reciclados', 15, 3000, 'pantalones_reciclados.jpg', 202)
-# catalogo.agregar_producto('Sudadera de material reciclado', 10, 3500, 'sudadera_reciclada.jpg', 203)
-# catalogo.agregar_producto('Vestido de algodón orgánico', 8, 4000, 'vestido_algodon.jpg', 204)
-# catalogo.agregar_producto('Chaqueta de lana reciclada', 5, 5000, 'chaqueta_lana.jpg', 205)
+# # Agregamos productos a la tabla
+# # catalogo.agregar_producto('Camiseta de algodón orgánico', 20, 1500, 'camiseta_algodon.jpg', 201)
+# # catalogo.agregar_producto('Pantalones reciclados', 15, 3000, 'pantalones_reciclados.jpg', 202)
+# # catalogo.agregar_producto('Sudadera de material reciclado', 10, 3500, 'sudadera_reciclada.jpg', 203)
+# # catalogo.agregar_producto('Vestido de algodón orgánico', 8, 4000, 'vestido_algodon.jpg', 204)
+# # catalogo.agregar_producto('Chaqueta de lana reciclada', 5, 5000, 'chaqueta_lana.jpg', 205)
 # catalogo.agregar_producto('Calcetines de bambú', 25, 800, 'calcetines_bambu.jpg', 206)
-# catalogo.agregar_producto('Sombrero de algodón orgánico', 12, 1200, 'sombrero_algodon.jpg', 207)
+#  catalogo.agregar_producto('Sombrero de algodón orgánico', 12, 1200, 'sombrero_algodon.jpg', 207)
 
 
 # Consultamos un producto y lo mostramos
