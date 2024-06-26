@@ -86,9 +86,7 @@ class Catalogo:
 
     def agregar_producto(self, descripcion, cantidad, precio, imagen, proveedor):
         sql = "INSERT INTO productos (descripcion, cantidad, precio, imagen_url, proveedor) VALUES (%s, %s, %s, %s, %s)"
-
         valores = (descripcion, cantidad, precio, imagen, proveedor)
-        
         self.cursor.execute(sql, valores)
         self.conn.commit()
         return self.cursor.lastrowid
@@ -125,4 +123,31 @@ def listar_productos():
 if __name__ == "__main__":
     app.run(debug=True)
 
+@app.route("/productos/<int:codigo>", methods=["GET"])
+def mostrar_producto(codigo):
+    producto = catalogo.consultar_producto(codigo)
+    if producto:
+        return jsonify(producto), 201
+    else:
+        return "Producto no encontrado", 404
+    
+@app.route("/productos", methods=["POST"])
+def agregar_producto():
+    #Recojo los datos del form
+    descripcion = request.form['descripcion']
+    cantidad = request.form['cantidad']
+    precio = request.form['precio']
+    imagen = request.files['imagen']
+    proveedor = request.form['proveedor']
+    nombre_imagen = ""
+    # Genero el nombre de la imagen
+    nombre_imagen = secure_filename(imagen.filename)
+    nombre_base, extension = os.path.splitext(nombre_imagen)
+    nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"
+    nuevo_codigo = catalogo.agregar_producto(descripcion, cantidad, precio, nombre_imagen, proveedor)
+    if nuevo_codigo:
+        imagen.save(os.path.join(ruta_destino, nombre_imagen))
+        return jsonify({"mensaje": "Producto agregado correctamente.", "codigo": nuevo_codigo, "imagen": nombre_imagen}), 201
+    else:
+        return jsonify({"mensaje": "Error al agregar el producto."}), 500
 
