@@ -110,7 +110,7 @@ class Catalogo:
 #-------------------------------------
 # Crear una instancia de la clase Catalogo
 
-catalogo = Catalogo(host='localhost', user='root', password='', database='inventario')
+catalogo = Catalogo(host='localhost', user='root', password='', database='miapp')
 
 # Carpeta para guardar las imagenes
 ruta_destino = './static/imagenes/'
