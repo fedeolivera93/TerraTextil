@@ -84,6 +84,27 @@ class Catalogo:
         else:
             print("Producto no encontrado.")
 
+    def agregar_producto(self, descripcion, cantidad, precio, imagen, proveedor):
+        sql = "INSERT INTO productos (descripcion, cantidad, precio, imagen_url, proveedor) VALUES (%s, %s, %s, %s, %s)"
+
+        valores = (descripcion, cantidad, precio, imagen, proveedor)
+        
+        self.cursor.execute(sql, valores)
+        self.conn.commit()
+        return self.cursor.lastrowid
+
+    def modificar_producto(self, codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nueva_imagen, nuevo_proveedor):
+        sql = "UPDATE productos SET descripcion = %s, cantidad = %s, precio = %s, imagen_url = %s, proveedor = %s WHERE codigo = %s"
+        valores = (nueva_descripcion, nueva_cantidad, nuevo_precio, nueva_imagen, nuevo_proveedor, codigo)
+        self.cursor.execute(sql, valores)
+        self.conn.commit()
+        return self.cursor.rowcount > 0
+    
+    def eliminar_producto(self, codigo):
+        # Eliminamos un producto de la tabla a partir de su código
+        self.cursor.execute(f"DELETE FROM productos WHERE codigo = {codigo}")
+        self.conn.commit()
+        return self.cursor.rowcount > 0
 
 
 #-----------------------------------------
