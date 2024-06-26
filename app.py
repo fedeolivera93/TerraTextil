@@ -151,3 +151,72 @@ def agregar_producto():
     else:
         return jsonify({"mensaje": "Error al agregar el producto."}), 500
 
+@app.route("/productos/<int:codigo>", methods=["PUT"])
+def modificar_producto(codigo):
+    #Se recuperan los nuevos datos del formulario
+    nueva_descripcion = request.form.get("descripcion")
+    nueva_cantidad = request.form.get("cantidad")
+    nuevo_precio = request.form.get("precio")
+    nuevo_proveedor = request.form.get("proveedor")
+    # Verifica si se proporcionó una nueva imagen
+    if 'imagen' in request.files:
+        imagen = request.files['imagen']
+
+        # Procesamiento de la imagen
+
+        nombre_imagen = secure_filename(imagen.filename)
+        nombre_base, extension = os.path.splitext(nombre_imagen)
+        nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"
+
+        # Guardar la imagen en el servidor
+
+        imagen.save(os.path.join(ruta_destino, nombre_imagen))
+
+        # Busco el producto guardado
+
+        producto = catalogo.consultar_producto(codigo)
+        if producto: # Si existe el producto...
+            imagen_vieja = producto["imagen_url"]
+
+            # Armo la ruta a la imagen
+
+            ruta_imagen = os.path.join(ruta_destino, imagen_vieja)
+
+            # Y si existe la borro.
+
+            if os.path.exists(ruta_imagen):
+                os.remove(ruta_imagen)
+
+        else:
+            producto = catalogo.consultar_producto(codigo)
+            if producto:
+                nombre_imagen = producto["imagen_url"]
+
+        # Se llama al método modificar_producto pasando el codigo del producto y los nuevos datos.
+
+        if catalogo.modificar_producto(codigo, nueva_descripcion,nueva_cantidad, nuevo_precio, nombre_imagen, nuevo_proveedor):
+            return jsonify({"mensaje": "Producto modificado"}), 200
+        else:
+            return jsonify({"mensaje": "Producto no encontrado"}), 403
+        
+
+@app.route("/productos/<int:codigo>", methods=["DELETE"])
+def eliminar_producto(codigo):
+
+# Primero, obtiene la información del producto para encontrar la imagen
+    producto = catalogo.consultar_producto(codigo)
+    if producto:
+
+        # Eliminar la imagen asociada si existe
+
+        ruta_imagen = os.path.join(ruta_destino, producto['imagen_url'])
+        if os.path.exists(ruta_imagen):
+            os.remove(ruta_imagen)
+        # Luego, elimina el producto del catálogo
+        if catalogo.eliminar_producto(codigo):
+            return jsonify({"mensaje": "Producto eliminado"}), 200
+        else:
+            return jsonify({"mensaje": "Error al eliminar el producto"}), 500
+    else:
+        return jsonify({"mensaje": "Producto no encontrado"}), 404
+    
