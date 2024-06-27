@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Productos 🚀</title>
+    <link rel="stylesheet" href="./static/css/styles-admin.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar-index">
+            <img class="logo-nav" src="./static/imagenes/logos-nav.webp" alt="logo agencia de aprendizaje">
+        </nav>
+    </header>
+    <div class="logo-centrado">
+        <img src="./static/imagenes/logo_Codo.jpg" alt="logo">
+    </div>
+    <h1>Eliminar Productos del Inventario</h1><br>
+    <table id="productos-table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descripción</th>
+                <th>Cantidad</th>
+                <th align="right">Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se agregarán dinámicamente las filas de productos -->
+        </tbody>
+    </table><br>
+    <div class="contenedor-centrado">
+        <a href="index.html">Menu principal</a>
+    </div>
+
+    <script>
+        const URL = "http://127.0.0.1:5000/";
+
+        function obtenerProductos() {
+            fetch(URL + 'productos')
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Error al obtener los productos.');
+                }
+            })
+            .then(data => {
+                const productosTable = document.getElementById('productos-table').getElementsByTagName('tbody')[0];
+                productosTable.innerHTML = ''; // Limpiar la tabla antes de insertar nuevos datos
+
+                data.forEach(producto => {
+                    const row = productosTable.insertRow();
+                    row.innerHTML = `
+                        <td>${producto.codigo}</td>
+                        <td>${producto.descripcion}</td>
+                        <td>${producto.cantidad}</td>
+                        <td align="right">${producto.precio}</td>
+                        <td><button onclick="eliminarProducto('${producto.codigo}')">Eliminar</button></td>
+                    `;
+                });
+            })
+            .catch(error => {
+                console.log('Error:', error);
+                alert('Error al obtener los productos.');
+            });
+        }
+
+        function eliminarProducto(codigo) {
+            if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
+                fetch(URL + `productos/${codigo}`, { method: 'DELETE' })
+                .then(response => {
+                    if (response.ok) {
+                        obtenerProductos(); // Actualizar la tabla
+                        alert('Producto eliminado correctamente.');
+                    } else {
+                        throw new Error('Error al eliminar el producto.');
+                    }
+                })
+                .catch(error => {
+                    alert(error.message);
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', obtenerProductos);
+    </script>
+</body>
+</html>

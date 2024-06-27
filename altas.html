@@ -61,14 +61,14 @@
                 if (response.ok) {
                     return response.json(); // Convertimos los datos de la respuesta a formato JSON
                 } else {
-                    throw new Error('Error al agregar el producto linea 64.'); // Lanzamos una excepción si hubo un error
+                    throw new Error('Error al agregar el producto.'); // Lanzamos una excepción si hubo un error
                 }
             })
             .then(function (data) {
                 alert('Producto agregado correctamente.'); // Muestra una alerta informando que el producto se agregó correctamente
             })
             .catch(function (error) {
-                alert('Error al agregar el producto.linea 71'); // En caso de error, mostramos una alerta con un mensaje de error
+                alert('Error al agregar el producto.'); // En caso de error, mostramos una alerta con un mensaje de error
             })
             .finally(function () {
                 // Limpiamos el formulario en ambos casos (éxito o error)

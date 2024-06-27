@@ -110,18 +110,21 @@ class Catalogo:
 #-------------------------------------
 # Crear una instancia de la clase Catalogo
 
-catalogo = Catalogo(host='localhost', user='root', password='', database='miapp')
+catalogo = Catalogo(host='fedeolivera93.mysql.pythonanywhere-services.com', user='fedeolivera93', password='root1234', database='fedeolivera93$miapp')
 
 # Carpeta para guardar las imagenes
-ruta_destino = './static/imagenes/'
+#ruta_destino = '/static/imagenes/'
+ruta_destino = '/home/fedeolivera93/mysite/static/imagenes/'
+
+# Ensure the destination directory exists
+# os.makedirs(ruta_destino, exist_ok=True)
+
 
 @app.route("/productos", methods=["GET"])
 def listar_productos():
     productos = catalogo.listar_productos()
     return jsonify(productos)
 
-if __name__ == "__main__":
-    app.run(debug=True)
 
 @app.route("/productos/<int:codigo>", methods=["GET"])
 def mostrar_producto(codigo):
@@ -153,65 +156,56 @@ def agregar_producto():
 
 @app.route("/productos/<int:codigo>", methods=["PUT"])
 def modificar_producto(codigo):
-    #Se recuperan los nuevos datos del formulario
+    # Se recuperan los nuevos datos del formulario
     nueva_descripcion = request.form.get("descripcion")
     nueva_cantidad = request.form.get("cantidad")
     nuevo_precio = request.form.get("precio")
     nuevo_proveedor = request.form.get("proveedor")
+
+    producto = catalogo.consultar_producto(codigo)
+    if not producto:
+        return jsonify({"mensaje": "Producto no encontrado"}), 404
+
     # Verifica si se proporcionó una nueva imagen
     if 'imagen' in request.files:
         imagen = request.files['imagen']
 
         # Procesamiento de la imagen
-
         nombre_imagen = secure_filename(imagen.filename)
         nombre_base, extension = os.path.splitext(nombre_imagen)
         nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"
 
         # Guardar la imagen en el servidor
-
         imagen.save(os.path.join(ruta_destino, nombre_imagen))
 
-        # Busco el producto guardado
+        # Borra la imagen vieja si existe
+        imagen_vieja = producto["imagen_url"]
+        ruta_imagen_vieja = os.path.join(ruta_destino, imagen_vieja)
+        if os.path.exists(ruta_imagen_vieja):
+            os.remove(ruta_imagen_vieja)
+    else:
+        nombre_imagen = producto["imagen_url"]
 
-        producto = catalogo.consultar_producto(codigo)
-        if producto: # Si existe el producto...
-            imagen_vieja = producto["imagen_url"]
+    # Se llama al método modificar_producto pasando el codigo del producto y los nuevos datos.
+    if catalogo.modificar_producto(codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nombre_imagen, nuevo_proveedor):
+        return jsonify({"mensaje": "Producto modificado"}), 200
+    else:
+        return jsonify({"mensaje": "Error al modificar el producto"}), 500
 
-            # Armo la ruta a la imagen
-
-            ruta_imagen = os.path.join(ruta_destino, imagen_vieja)
-
-            # Y si existe la borro.
-
-            if os.path.exists(ruta_imagen):
-                os.remove(ruta_imagen)
-
-        else:
-            producto = catalogo.consultar_producto(codigo)
-            if producto:
-                nombre_imagen = producto["imagen_url"]
-
-        # Se llama al método modificar_producto pasando el codigo del producto y los nuevos datos.
-
-        if catalogo.modificar_producto(codigo, nueva_descripcion,nueva_cantidad, nuevo_precio, nombre_imagen, nuevo_proveedor):
-            return jsonify({"mensaje": "Producto modificado"}), 200
-        else:
-            return jsonify({"mensaje": "Producto no encontrado"}), 403
-        
 
 @app.route("/productos/<int:codigo>", methods=["DELETE"])
 def eliminar_producto(codigo):
-
-# Primero, obtiene la información del producto para encontrar la imagen
+    # Primero, obtiene la información del producto para encontrar la imagen
     producto = catalogo.consultar_producto(codigo)
     if producto:
-
         # Eliminar la imagen asociada si existe
-
         ruta_imagen = os.path.join(ruta_destino, producto['imagen_url'])
         if os.path.exists(ruta_imagen):
-            os.remove(ruta_imagen)
+            try:
+                os.remove(ruta_imagen)
+            except Exception as e:
+                return jsonify({"mensaje": f"Error al eliminar la imagen: {str(e)}"}), 500
+        
         # Luego, elimina el producto del catálogo
         if catalogo.eliminar_producto(codigo):
             return jsonify({"mensaje": "Producto eliminado"}), 200
@@ -219,4 +213,8 @@ def eliminar_producto(codigo):
             return jsonify({"mensaje": "Error al eliminar el producto"}), 500
     else:
         return jsonify({"mensaje": "Producto no encontrado"}), 404
+
     
+
+if __name__ == "__main__":
+    app.run(debug=True)
