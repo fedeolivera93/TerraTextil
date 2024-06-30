@@ -1,36 +1,245 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de uso de la API 🚀</title>
-    <link rel="stylesheet" href="./static/css/styles-admin.css">
-</head>
-<body>
-    <header>
-        <nav class="navbar-index">
-            <img class="logo-nav" src="./static/imagenes/logos-nav.webp" alt="logo agencia de aprendizaje">
-        </nav>
-    </header>
-    <div>
-        <div class="logo-centrado">
-            <img src="./static/imagenes/logo_Codo.jpg" alt="logo">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tienda online de ropa eco-friendly">
+        <meta name="keywords" content="ropa sustentable, moda ecológica, moda sostenible, prendas reciclables, ropa reciclada, moda ética, prendas orgánicas, moda verde, ropa eco-friendly, vestimenta reciclable, prendas respetuosas con el medio ambiente, ropa eco-consciente, TerraTextil">
+        <title>TerraTextil - Ropa Autosustentable</title>
+        <link rel="stylesheet" href="static/css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+
+<body class="grid-container">
+    <header class="header">
+        <div class="container flex-nav">
+            <div class="nav-header">
+                <a href="index.html">
+                    <img src="static/images/logo-terratextil.png" alt="logo-terratextil">
+                </a>
+                <button class="nav-toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="nav-links" id="nav-links">
+                <ul>
+                    <li class="nav-link"><a href="index.html">Inicio</a></li>
+                    <li class="nav-link"><a href="produccion.html">Producción</a></li>     
+                    <li class="nav-link"><a href=index.html#contacto>Contacto</a></li>         
+                    <li class="nav-link"><a href="tienda.html"><span>Tienda</span></a></li>
+                </ul>
+            </nav>
         </div>
-        <h1>Ejemplos de uso de la API</h1><br>
-        <table>
-            <tr>
-                <td class="contenedor-centrado"><a href="altas.html">Alta de productos</a></td>
-            </tr>
-            <tr>
-                <td class="contenedor-centrado"><a href="listado.html">Listado de productos</a></td>
-            </tr>
-            <tr>
-                <td class="contenedor-centrado"><a href="modificaciones.html">Modificar datos de productos</a></td>
-            </tr>
-            <tr>
-                <td class="contenedor-centrado"><a href="listadoEliminar.html">Eliminar productos</a></td>
-            </tr>
-        </table>
-    </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+                <div class="text-overlay">
+                    <h1 class="animate__animated animate__fadeInUp">Moda Sostenible y Eco-Friendly en TERRATEXTIL</h1>
+                    <p class="animate__animated animate__fadeInUp">En Terratextil nos comprometemos a ofrecerte moda sostenible y autosustentable. <br>¡Contribuye junto a nosotros a un mundo más verde!</p>
+                    <div class="animate__animated animate__fadeInUp">
+                        <a href="produccion.html" class="button button-produccion">Conocé más</a>
+                        <a href="tienda.html" class="button button-tienda">Ir a la tienda</a>
+                    </div>
+                </div>
+        </section>
+
+        <section class="section-2">
+            <div class="production-section">
+                <div class="column-l">
+                    <img src="static/images/image-blog.jpeg" alt="cadena de producción">
+                </div>
+                <div class="column-r">
+                    <h2>Ropa Sostenible y Amigable con el Medio Ambiente </h2>
+                    <p>Descubre nuestra colección de moda sustentable en TERRATEXTIL, donde combinamos estilo y conciencia ecológica para un mundo más verde. Cada prenda está diseñada con un enfoque en la sostenibilidad ambiental, utilizando materiales reciclados y orgánicos.</p>
+                    <p>Nuestros procesos de producción están pensados para reducir el consumo de agua y energía, creando así ropa autosustentable que no compromete el medio ambiente. En TERRATEXTIL, no solo vendemos moda; promovemos un estilo de vida que demuestra cómo cuidar el planeta puede ser elegante y sofisticado.</p>
+                    <a href="produccion.html">Conocé nuestra cadena de producción<i class='bx bxs-chevrons-right' ></i></a>
+                </div>
+            </div>
+        </section>
+
+        <button id="scrollToTopBtn" class="bx bx-up-arrow-alt"></button>
+
+
+        <section class="section-3">
+            <div class="blog-section">
+                <div class="column-l">
+                    <img src="static/images/image-blog2.jpeg" alt="cadena de producción">
+                </div>
+                <div class="column-r">
+                    <h2>¡Visita Nuestra Tienda! </h2>
+                    <p>Explora nuestra amplia selección de ropa autosustentable en nuestra tienda en línea. Encuentra prendas que combinan estilo, comodidad y compromiso con el medio ambiente. ¡Haz tu compra hoy y únete al movimiento por la moda sostenible!</p>
+                    <a href="tienda.html">Ir a la tienda<i class='bx bxs-chevrons-right' ></i></a>
+                </div>
+            </div>
+        </section>
+
+        <div class="separator-top"></div>
+
+        <section class="three-columns">
+            <h3>¿Por qué elegirnos?</h3>
+            <div class="why-section">
+                <div class="why-columns">
+                    <div class="animate__animated column animate__fadeInLeftBig2">
+                        <i class='bx bx-recycle'></i>
+                        <h4>Sostenibilidad</h4>
+                        <p>Nuestro compromiso con la sostenibilidad va más allá de las palabras. Desde la elección de materiales reciclados y orgánicos hasta la reducción del consumo de agua y energía, estamos dedicados a ofrecerte moda respetuosa con el planeta.</p>
+                    </div>
+                    <div class="animate__animated column animate__fadeInUpBig2">
+                        <i class='bx bxs-t-shirt'></i>
+                        <h4>Calidad y Estilo</h4>
+                        <p>No creemos que tengas que sacrificar calidad o estilo. En Terratextil, combinamos materiales de alta calidad con diseños sofisticados para ofrecerte prendas que no solo se ven bien, sino que también están hechas para perdurar. </p>
+                    </div>
+                    <div class="animate__animated column animate__fadeInRightBig2">
+                        <i class='bx bxs-palette'></i>
+                        <h4>Inspiración y Educación</h4>
+                        <p>No solo vendemos moda, también queremos inspirarte y educarte sobre la importancia de la moda sostenible. Nuestro objetivo es empoderarte con el conocimiento necesario para tomar decisiones y contribuir positivamente a un mundo más verde.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="separator-bottom"></div>
+
+        <section class="faq-section">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faqs-container">
+                <div class="faqs">
+                    <div class="question">
+                        <h3>¿Qué es TerraTextil?</h3>
+                        <i class="bx bxs-chevron-down"></i>
+                    </div>
+                    <p class="answer">
+                        TerraTextil es una tienda online que ofrece ropa eco-friendly y moda sostenible. Se comprometen a proporcionar moda autosustentable y contribuir a un mundo más verde.
+                    </p>
+                </div>
+                <div class="faqs">
+                    <div class="question">
+                        <h3>¿Cómo contribuye TerraTextil a la sostenibilidad ambiental?</h3>
+                        <i class="bx bxs-chevron-down"></i>
+                    </div>
+                    <p class="answer">
+                        TerraTextil utiliza materiales reciclados y orgánicos para diseñar su ropa, con procesos de producción que reducen el consumo de agua y energía, demostrando que es posible cuidar el planeta con estilo y sofisticación.
+                    </p>
+                </div>
+                <div class="faqs">
+                    <div class="question">
+                        <h3>¿Qué puedo encontrar en la tienda en línea de TerraTextil?</h3>
+                        <i class="bx bxs-chevron-down"></i>
+                    </div>
+                    <p class="answer">
+                        En la tienda en línea de TerraTextil, puedes explorar una amplia selección de ropa autosustentable que combina estilo, comodidad y compromiso con el medio ambiente.
+                    </p>
+                </div>
+                <div class="faqs">
+                    <div class="question">
+                        <h3>¿Por qué debería elegir TerraTextil sobre otras marcas de moda?</h3>
+                        <i class="bx bxs-chevron-down"></i>
+                    </div>
+                    <p class="answer">
+                        Deberías elegir TerraTextil porque su compromiso con la sostenibilidad va más allá de las palabras, ofreciendo prendas de alta calidad y estilo sin sacrificar el bienestar del planeta. Además, buscan inspirar y educar sobre la importancia de la moda sostenible.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+
+        <div class="separator-top"></div>
+
+        <div id="contacto"><!-- Parte de formulario  en el Index -->
+            <div class="containerForm">
+                <h3>¡Contactanos!</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre y Apellido:</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Número de Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    <h4>Elije tu medio preferido para que hablemos contigo</h4>
+                    <div class="form-group radio-group">
+                        <label><input type="radio" name="contact" value="email" checked> Email</label>
+                        <label><input type="radio" name="contact" value="telefono"> Teléfono</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Asunto:</label>
+                        <select id="subject" name="subject">
+                            <option value="">Seleccione un asunto</option>
+                            <option value="consulta">Consulta</option>
+                            <option value="pedido">Pedido</option>
+                            <option value="reclamo">Reclamo</option>
+                            <option value="informacion">Solicito más información</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label></label>
+
+                    </div>
+                    <input type="submit" value="Enviar" class="button">
+                </form>
+            </div>
+        </div>
+
+        <div class="separator-bottom"></div>
+
+
+        <div class="container-maps"> 
+            <div class="content-map">
+                <h2>Envíos a Todo el País desde Buenos Aires</h2>
+                <p>No contamos con local físico, pero desarrollamos nuestras actividades en la ciudad de Buenos Aires y realizamos envíos a todo el país.</p>
+            </div>    
+                
+            <div class="maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d105089.65676685517!2d-58.47790850033568!3d-34.60285228626364!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sar!4v1716015152052!5m2!1sen!2sar" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>  
+        
+        <script src="static/js/script.js"></script>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-row">
+            <div class="footer-div">
+                <img src="static/images/logo-terratextil-2.png" alt="logo-terratextil">
+            </div>
+            <div class="footer-div">
+                <p>Moda sostenible y estilo consciente en Terratextil. ¡Únete a nosotros para un mundo más verde!</p>
+            </div>
+            <div class="footer-div" id="footer-menu">
+                <a href="index.html">Inicio</a>
+                <a href="produccion.html">Producción</a>
+                <a href="#contacto">Contacto</a>
+                <a href="tienda.html">Tienda</a>
+            </div>
+            <div class="footer-div" id="media">
+                <a href="https://www.facebook.com" target="_blank"><i class='bx bxl-facebook'></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class='bx bxl-instagram'></i></a>
+                
+                
+            </div>
+        </div>
+        <div class="footer-row copyright">
+            <p>&copy; 2024 TerraTextil - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    
+
 </body>
 </html>
