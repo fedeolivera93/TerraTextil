@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 * {
-    font-family: 'Quicksand', sans-serif;
-    margin: 0;
+    font-family: 'lato', sans-serif;
+    margin: 0 auto;
 }
 
 body {
     background-color: #345;
-    color: white;
+    color: #eee;
 }
 
 .contenedor-centrado {
@@ -22,7 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 5px;
-    margin-top: 120px;
+    margin-top: 100px;
 }
 
 .navbar-index {
@@ -31,7 +31,6 @@ body {
     top: 0;
     width: 100vw;
     height: 100px;
-    background-color: #390E8C;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -48,7 +47,7 @@ body {
 }
 
 p {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'lato', Times, serif;
     background-color: #f9f9f9;
     max-width: 400px;
     margin: 0 auto;
@@ -57,14 +56,14 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
-    color: #ffd200;
+    color: #eee;
 }
 
 form {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #390e8c;
+    background-color: #365;
     border: 1px solid lightslategray;
     border-radius: 5px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
@@ -74,7 +73,7 @@ table {
     max-width: 90%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #390e8c;
+    background-color: #345;
     border: 1px solid lightslategray;
     border-radius: 5px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
@@ -123,10 +122,10 @@ button:hover {
 }
 
 a {
-    padding: 8px;
-    margin: 4px;
-    background-color: #fdab13;
-    color: #1d1a39;
+    padding: 10px;
+    margin: 5px;
+    background-color: #422;
+    color: #eee;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -136,6 +135,6 @@ a {
 }
 
 a:hover {
-    background-color: #1d1a39;
-    color: #fdab13;
+    background-color: #311;
+    color: #eee;
 }
