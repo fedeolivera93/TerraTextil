@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Login y Registro</title>
+    <style>
+        body {
+            font-family: 'lato', sans-serif, 'nunito';
+            font-size: 1.1rem;
+            color: #fff;
+            margin: 0;
+            background-color: #345;
+        }
+
+        .container {
+            display: grid;
+            grid-template:
+                "header" 120px
+                "main" auto
+                "footer" 120px;
+        }
+
+        h2 {
+            color: #fff;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #access-granted {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #594;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .nav-links {
+            height: 0;
+            overflow: hidden;
+            transition: 0.45s ease-out;
+            z-index: 10;
+            color:#222;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="register-section">
+            <h2>Registrar Usuario</h2>
+            <form id="registerForm">
+                <label for="register-username">Nombre de Usuario:</label>
+                <input type="text" id="register-username" required>
+                <label for="register-password">Contraseña:</label>
+                <input type="password" id="register-password" required>
+                <button type="submit">Registrar</button>
+            </form>
+            <p id="register-error-message" class="error"></p>
+        </div>
+
+        <div id="login-section" class="hidden">
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <label for="login-username">Nombre de Usuario:</label>
+                <input type="text" id="login-username" required>
+                <label for="login-password">Contraseña:</label>
+                <input type="password" id="login-password" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <p id="login-error-message" class="error"></p>
+        </div>
+
+        <div id="access-granted">
+            Acceso concedido para modificar Base de Datos.
+        </div>
+    </div>
+    <script>
+        const defaultUsers = [
+            { username: 'user1', password: 'password1' },
+            { username: 'user2', password: 'password2' }
+        ];
+
+        // Obtener los usuarios de localStorage o usar los predeterminados
+        let users = JSON.parse(localStorage.getItem('users')) || defaultUsers;
+
+        // Comprobar si hay dos usuarios al cargar la página
+        if (users.length >= 2) {
+            document.getElementById('register-section').classList.add('hidden');
+            document.getElementById('login-section').classList.remove('hidden');
+        }
+
+        function setAccessExpiration() {
+            const expirationTime = Date.now() + 10 * 60 * 1000; // 10 minutos en milisegundos
+            localStorage.setItem('accessExpiration', expirationTime);
+        }
+
+        function checkAccessExpiration() {
+            const expirationTime = localStorage.getItem('accessExpiration');
+            if (expirationTime && Date.now() > expirationTime) {
+                localStorage.removeItem('accessExpiration');
+                localStorage.removeItem('loggedInUser');
+                document.getElementById('access-granted').style.display = 'none';
+                document.getElementById('login-section').classList.remove('hidden');
+            } else if (expirationTime) {
+                document.getElementById('access-granted').style.display = 'block';
+                document.getElementById('login-section').classList.add('hidden');
+            }
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('register-username').value;
+            const password = document.getElementById('register-password').value;
+
+            const userExists = users.find(u => u.username === username);
+
+            if (userExists) {
+                document.getElementById('register-error-message').textContent = 'El nombre de usuario ya existe';
+            } else {
+                users.push({ username, password });
+                localStorage.setItem('users', JSON.stringify(users));
+                alert('Registro exitoso!');
+                document.getElementById('register-section').classList.add('hidden');
+                document.getElementById('login-section').classList.remove('hidden');
+            }
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+
+            const user = users.find(u => u.username === username && u.password === password);
+
+            if (user) {
+                alert('Login exitoso!');
+                document.getElementById('login-error-message').textContent = '';
+                document.getElementById('login-section').classList.add('hidden');
+                document.getElementById('access-granted').style.display = 'block';
+                setAccessExpiration();
+                localStorage.setItem('loggedInUser', JSON.stringify(user));
+            } else {
+                document.getElementById('login-error-message').textContent = 'Nombre de usuario o contraseña incorrectos';
+            }
+        });
+
+        checkAccessExpiration();
+    </script>
+</body>
+</html>
