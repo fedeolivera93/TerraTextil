@@ -42,10 +42,7 @@
             color: white;
             border-radius: 5px;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+
         .nav-links {
             height: 0;
             overflow: hidden;
@@ -121,6 +118,24 @@
             document.getElementById('login-section').classList.remove('hidden');
         }
 
+        function setAccessExpiration() {
+            const expirationTime = Date.now() + 10 * 60 * 1000; // 10 minutos en milisegundos
+            localStorage.setItem('accessExpiration', expirationTime);
+        }
+
+        function checkAccessExpiration() {
+            const expirationTime = localStorage.getItem('accessExpiration');
+            if (expirationTime && Date.now() > expirationTime) {
+                localStorage.removeItem('accessExpiration');
+                localStorage.removeItem('loggedInUser');
+                document.getElementById('access-granted').style.display = 'none';
+                document.getElementById('login-section').classList.remove('hidden');
+            } else if (expirationTime) {
+                document.getElementById('access-granted').style.display = 'block';
+                document.getElementById('login-section').classList.add('hidden');
+            }
+        }
+
         document.getElementById('registerForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
@@ -153,10 +168,14 @@
                 document.getElementById('login-error-message').textContent = '';
                 document.getElementById('login-section').classList.add('hidden');
                 document.getElementById('access-granted').style.display = 'block';
+                setAccessExpiration();
+                localStorage.setItem('loggedInUser', JSON.stringify(user));
             } else {
                 document.getElementById('login-error-message').textContent = 'Nombre de usuario o contraseña incorrectos';
             }
         });
+
+        checkAccessExpiration();
     </script>
 </body>
 </html>

@@ -42,7 +42,10 @@
             color: white;
             border-radius: 5px;
         }
-
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
         .nav-links {
             height: 0;
             overflow: hidden;
@@ -83,13 +86,30 @@
         </div>
 
         <div id="access-granted">
-            Acceso concedido para modificar Base de Datos.
+                <div class="logo-centrado">
+                    <img src="./static/imagenes/logo_Codo.jpg" alt="logo">
+                </div>
+                <h1>Ejemplos de uso de la API</h1><br>
+                <table>
+                    <tr>
+                        <td class="contenedor-centrado"><a href="altas.html">Alta de productos</a></td>
+                    </tr>
+                    <tr>
+                        <td class="contenedor-centrado"><a href="listado.html">Listado de productos</a></td>
+                    </tr>
+                    <tr>
+                        <td class="contenedor-centrado"><a href="modificaciones.html">Modificar datos de productos</a></td>
+                    </tr>
+                    <tr>
+                        <td class="contenedor-centrado"><a href="listadoEliminar.html">Eliminar productos</a></td>
+                    </tr>
+                </table>
         </div>
     </div>
     <script>
         const defaultUsers = [
-            { username: 'user1', password: 'password1' },
-            { username: 'user2', password: 'password2' }
+            { username: 'federico', password: '123456' },
+            { username: 'luis', password: '123456' }
         ];
 
         // Obtener los usuarios de localStorage o usar los predeterminados
@@ -99,24 +119,6 @@
         if (users.length >= 2) {
             document.getElementById('register-section').classList.add('hidden');
             document.getElementById('login-section').classList.remove('hidden');
-        }
-
-        function setAccessExpiration() {
-            const expirationTime = Date.now() + 10 * 60 * 1000; // 10 minutos en milisegundos
-            localStorage.setItem('accessExpiration', expirationTime);
-        }
-
-        function checkAccessExpiration() {
-            const expirationTime = localStorage.getItem('accessExpiration');
-            if (expirationTime && Date.now() > expirationTime) {
-                localStorage.removeItem('accessExpiration');
-                localStorage.removeItem('loggedInUser');
-                document.getElementById('access-granted').style.display = 'none';
-                document.getElementById('login-section').classList.remove('hidden');
-            } else if (expirationTime) {
-                document.getElementById('access-granted').style.display = 'block';
-                document.getElementById('login-section').classList.add('hidden');
-            }
         }
 
         document.getElementById('registerForm').addEventListener('submit', function(event) {
@@ -151,14 +153,10 @@
                 document.getElementById('login-error-message').textContent = '';
                 document.getElementById('login-section').classList.add('hidden');
                 document.getElementById('access-granted').style.display = 'block';
-                setAccessExpiration();
-                localStorage.setItem('loggedInUser', JSON.stringify(user));
             } else {
                 document.getElementById('login-error-message').textContent = 'Nombre de usuario o contraseña incorrectos';
             }
         });
-
-        checkAccessExpiration();
     </script>
 </body>
 </html>
