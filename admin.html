@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Login y Registro</title>
+    <link rel="stylesheet" href="static/css/styles-admin.css">
+
     <style>
         body {
             font-family: 'lato', sans-serif, 'nunito';
@@ -11,6 +13,7 @@
             color: #fff;
             margin: 0;
             background-color: #345;
+            margin: 0 auto;
         }
 
         .container {
@@ -34,14 +37,7 @@
             display: none;
         }
 
-        #access-granted {
-            display: none;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #594;
-            color: white;
-            border-radius: 5px;
-        }
+
 
         .nav-links {
             height: 0;
@@ -53,6 +49,8 @@
             display: flex;
             justify-content: center;
             text-align: center;
+            margin: 0 auto;
+
         }
     </style>
 </head>
@@ -84,9 +82,9 @@
 
         <div id="access-granted">
                 <div class="logo-centrado">
-                    <img src="./static/imagenes/logo_Codo.jpg" alt="logo">
+                    <img src="static/images/logo-terratextil-2.png" alt="logo" style="max-width: 120px;">
                 </div>
-                <h1>Ejemplos de uso de la API</h1><br>
+                <h1>Panel de administración</h1><br>
                 <table>
                     <tr>
                         <td class="contenedor-centrado"><a href="altas.html">Alta de productos</a></td>
