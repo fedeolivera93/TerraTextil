@@ -1,140 +1,211 @@
-/* Estilos para todo el proyecto */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
-* {
-    font-family: 'lato', sans-serif;
-    margin: 0 auto;
-}
-
 body {
-    background-color: #345;
-    color: #eee;
-}
-
-.contenedor-centrado {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
-.logo-centrado {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5px;
-    margin-top: 100px;
-}
-
-.navbar-index {
+    font-family: 'lato', sans-serif, 'nunito';
+    font-size: 1.1rem;
     margin: 0;
-    padding: 0;
-    top: 0;
-    width: 100vw;
-    height: 100px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    overflow: hidden;
-    margin-bottom: 20px;
-    position: fixed !important;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-.logo-nav {
-    height: 80%;
-    overflow: hidden;
-    margin-left: 1em;
-}
-
-p {
-    font-family: 'lato', Times, serif;
-    background-color: #f9f9f9;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    text-align: center;
-    color: #eee;
-}
-
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #365;
-    border: 1px solid lightslategray;
-    border-radius: 5px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-table {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 20px;
     background-color: #345;
-    border: 1px solid lightslategray;
-    border-radius: 5px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    color: #ddd
 }
 
-label {
+.container {
+    display: grid;
+    grid-template:
+        "header" 120px
+        "main" auto
+        "footer" 120px;
+}
+
+h1, h2 {
+    color: #fff;
+    text-align: center;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+    background-color: #00000000;
+}
+
+.hidden {
+    display: none;
+}
+
+#access-granted {
+    display: none;
+    padding: 10px;
+}
+
+.nav-links {
+    height: 0;
+    overflow: hidden;
+    transition: 0.45s ease-out;
+    z-index: 10;
+    color:#222;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Sección de login */
+#login-section {
+    padding: 15px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+
+#login-section h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+#login-section label {
     display: block;
     margin-bottom: 5px;
+    font-size: 18px;
 }
 
-input[type="text"],
-input[type="number"],
-textarea {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-}
-
-input[type="submit"] {
-    padding: 10px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-button {
+#login-section input {
+    width: 100%;
     padding: 8px;
-    margin: 4px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
 }
 
-button:hover {
-    background-color: #0056b3;
-}
-
-a {
+#button-login {
+    width: 100%;
     padding: 10px;
-    margin: 5px;
-    background-color: #422;
-    color: #eee;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-    text-decoration: none;
-    font-size: 85%;
-    font-weight: 800;
+    background-color: #400;
+    color: #eee;
+    font-size: 16px;
 }
 
-a:hover {
-    background-color: #311;
+#login-error-message {
+    color: #f00;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Clase oculta */
+.hidden {
+    display: none;
+}
+
+/* Sección principal */
+#access-granted {
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Logo centrado */
+.logo-centrado {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Encabezado principal */
+#access-granted h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Tabla y contenido centrado */
+table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #999;
+}
+
+td a {
+    text-decoration: none;
+    font-size: 16px;
     color: #eee;
 }
+
+td a:hover {
+    color: #888;
+}
+
+/* Ultima fila sin borde inferior */
+table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* Formulario */
+#formulario {
+    padding: 20px;
+    background-color: #345;
+    max-width: 500px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Etiquetas */
+#formulario label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+/* Campos de entrada */
+#formulario input[type="text"],
+#formulario input[type="number"],
+#formulario input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+/* Botón */
+#formulario button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #400;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color:#eee
+}
+
+#formulario button:hover {
+    background-color: #500;
+}
+
+/* Enlace */
+#formulario a, #button-return {
+    /* text-decoration: none; */
+    font-size: 16px;
+    color: #eee;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+    
+}
+
+#formulario a:hover, #button-return:hover {
+    color: #888
+    
+    }

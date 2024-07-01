@@ -6,56 +6,7 @@
     <title>Sistema de Login y Registro</title>
     <link rel="stylesheet" href="static/css/styles-admin.css">
 
-    <style>
-        body {
-            font-family: 'lato', sans-serif, 'nunito';
-            font-size: 1.1rem;
-            margin: 0;
-            background-color: #345;
-            margin: 0 auto;
-            color: #ddd
-        }
 
-        .container {
-            display: grid;
-            grid-template:
-                "header" 120px
-                "main" auto
-                "footer" 120px;
-        }
-
-        h2 {
-            color: #fff;
-        }
-
-        .error {
-            color: red;
-            margin-top: 10px;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        #access-granted {
-            display: none;
-            padding: 10px;
-        }
-
-        .nav-links {
-            height: 0;
-            overflow: hidden;
-            transition: 0.45s ease-out;
-            z-index: 10;
-            color:#222;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            margin: 0 auto;
-
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -78,14 +29,14 @@
                 <input type="text" id="login-username" required>
                 <label for="login-password">Contraseña:</label>
                 <input type="password" id="login-password" required>
-                <button type="submit">Entrar</button>
+                <button id="button-login" type="submit">Ingresar</button>
             </form>
             <p id="login-error-message" class="error"></p>
         </div>
 
         <div id="access-granted">
                 <div class="logo-centrado">
-                    <img src="static/images/logo-terratextil-2.png" alt="logo" style="max-width: 120px;">
+                    <img src="static/images/logo-terratextil-2.png" alt="logo" style="max-width: 110px;">
                 </div>
                 <h1>Panel de administración</h1><br>
                 <table>
