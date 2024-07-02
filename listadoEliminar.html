@@ -15,7 +15,7 @@
     <h1>Eliminar Productos del Inventario</h1><br>
     <table id="productos-table">
         <thead>
-            <tr>
+            <tr id="table-eliminar">
                 <th>Código</th>
                 <th>Descripción</th>
                 <th>Cantidad</th>
@@ -56,7 +56,7 @@
                         <td>${producto.descripcion}</td>
                         <td>${producto.cantidad}</td>
                         <td align="right">${producto.precio}</td>
-                        <td><button onclick="eliminarProducto('${producto.codigo}')">Eliminar</button></td>
+                        <td><button id="buttondelete" onclick="eliminarProducto('${producto.codigo}')">Eliminar</button></td>
                     `;
                 });
             })

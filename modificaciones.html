@@ -11,14 +11,16 @@
 
     <div class="logo-centrado">
         <img src="static/images/logo-terratextil-2.png" alt="logo" style="max-width: 110px;">
-    </div>car Productos del Inventario</h1><br>
+    </div> <h1>Buscar Productos del Inventario</h1><br>
     <div id="app">
         <!-- Primer formulario: Selector de producto. LLama a la función obtenerProducto cuando se envíe el formulario -->
         <form id="form-obtener-producto">
             <label for="codigo">Código:</label>
             <input type="text" id="codigo" required><br>
-            <button type="submit">Modificar Producto</button> 
-            <a href="admin.html">Menu principal</a>
+            <button id="buttoninv" type="submit">Modificar Producto</button> 
+            <div class="contenedor-centrado">
+                <a href="admin.html" id="button-return"> Menú principal</a>
+            </div>
         </form>
         <!-- Segundo formulario: se muestra solo si mostrarDatosProducto es verdadero. Llama a la función guardarCambios -->
         <div id="datos-producto" style="display: none;">
@@ -36,7 +38,7 @@
                 <input type="file" id="nuevaImagen"><br><br>
                 <label for="proveModificar">Proveedor:</label>
                 <input type="number" id="proveModificar" required><br>
-                <button type="submit">Guardar Cambios</button>
+                <button type="submit" id="buttoninv">Guardar Cambios</button>
                 <a href="modificaciones.html">Cancelar</a>
             </form>
         </div>

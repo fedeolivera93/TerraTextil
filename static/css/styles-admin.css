@@ -179,7 +179,7 @@ table tr:last-child td {
 }
 
 /* Botón */
-#formulario button {
+#formulario button, #buttoninv {
     width: 100%;
     padding: 10px;
     border-radius: 3px;
@@ -196,7 +196,7 @@ table tr:last-child td {
 
 /* Enlace */
 #formulario a, #button-return {
-    /* text-decoration: none; */
+    text-decoration: none;
     font-size: 16px;
     color: #eee;
     display: inline-block;
@@ -209,3 +209,84 @@ table tr:last-child td {
     color: #888
     
     }
+
+
+ /* -------------------------- LISTADO ------------------------------ */
+
+ #table-listado, #productos-table {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+}
+
+th, td {
+    padding: 12px 15px;
+    /* border: 1px solid #ddd; */
+}
+
+th {
+    font-weight: bold;
+}
+
+thead th {
+    text-align: left;
+}
+
+th[align="right"], td[align="right"] {
+    text-align: right;
+}
+
+.contenedor-centrado {
+    text-align: center;
+}
+
+/* ------------------------------ Modificaciones ----------------------- */
+
+/* Estilo general de la aplicación */
+#app {
+    margin: 0 auto; /* Centrar la aplicación horizontalmente */
+    width: 80%; /* Ancho máximo del 80% */
+    padding: 20px; /* Agregar espacio alrededor del contenido */
+  }
+  
+  /* Estilo de los formularios */
+  
+
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="file"] {
+    width: 100%; /* Ancho completo para los campos de entrada */
+    padding: 10px; /* Espacio dentro de los campos de entrada */
+    border: 1px solid #ccc; /* Borde para los campos de entrada */
+    box-sizing: border-box; /* Incluir el borde en el ancho del campo */
+  }
+  
+
+  
+  /* Estilo específico para el segundo formulario */
+  #datos-producto {
+    display: none; /* Ocultar el segundo formulario inicialmente */
+  }
+  
+  #datos-producto h2 {
+    margin-top: 0; /* Eliminar el margen superior por defecto */
+  }
+  
+  /* Estilos para las imágenes */
+  #imagen-actual,
+  #imagen-vista-previa {
+    margin-bottom: 10px; /* Espacio debajo de las imágenes */
+  }
+  
+
+  #buttondelete {
+    padding: 8px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #400;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color:#eee
+  }
