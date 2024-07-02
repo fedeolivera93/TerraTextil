@@ -214,7 +214,7 @@ table tr:last-child td {
  /* -------------------------- LISTADO ------------------------------ */
 
  #table-listado, #productos-table {
-    width: 80%;
+    max-width: 600px;
     margin: 0 auto;
     font-size: 18px;
     text-align: center;
@@ -246,7 +246,7 @@ th[align="right"], td[align="right"] {
 /* Estilo general de la aplicación */
 #app {
     margin: 0 auto; /* Centrar la aplicación horizontalmente */
-    width: 80%; /* Ancho máximo del 80% */
+    max-width: 500px; /* Ancho máximo del 80% */
     padding: 20px; /* Agregar espacio alrededor del contenido */
   }
   
@@ -261,6 +261,7 @@ th[align="right"], td[align="right"] {
     padding: 10px; /* Espacio dentro de los campos de entrada */
     border: 1px solid #ccc; /* Borde para los campos de entrada */
     box-sizing: border-box; /* Incluir el borde en el ancho del campo */
+    margin-bottom: 14px;
   }
   
 
@@ -290,3 +291,5 @@ th[align="right"], td[align="right"] {
     font-size: 16px;
     color:#eee
   }
+
+
